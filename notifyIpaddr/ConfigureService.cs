@@ -11,7 +11,7 @@ namespace notifyIpaddr
     public class ConfigureService
     {
         public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
-                                                                    .SetBasePath(Directory.GetCurrentDirectory())
+                                                                    .SetBasePath(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory))
                                                                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                                                                     .AddEnvironmentVariables()    
                                                                     .Build();
